@@ -7,11 +7,12 @@ to change.
 
 ---
 
-## Status: 9 of 10 are placeholders
+## Status: 8 of 10 are placeholders
 
-**Update:** `service-remodel.jpg` is now a real client photo (finished bathroom
-remodel, supplied via the Drive MELS folder on Aug 2, 2026). The other nine
-slots still hold placeholders.
+**Update (Aug 2, 2026):** `service-remodel.jpg` is now a real client photo
+(finished bathroom remodel, supplied via the Drive MELS folder), and
+`service-repair.jpg` holds a stock photo the client chose (Unsplash industrial
+pipework). The other eight slots still hold placeholders.
 
 The site was built inside a sandbox whose network policy blocks every stock
 photo host (Unsplash, Pexels, Pixabay, Wikimedia — all refused at the proxy).
@@ -41,7 +42,7 @@ load behaviour on the preview are exactly what you'll get with real photos.
 |---|---|---|---|---|---|
 | `images/hero.jpg` | Home — full-width hero behind the headline | Plumber at work, copper pipework, or a clean modern bathroom. Needs a calm left side: the headline sits over it and the green scrim darkens that half. | Generated plate — supply-line rough-in with gate valve and pressure gauge | 2000 × 1250 (16:10) | Generated locally, `tools/generate-placeholder-images.py` |
 | `images/service-remodel.jpg` | Home service card + Services "Plumbing remodels" | ✔ Done — real client photo in place | Client photo — finished bathroom remodel: white subway tile, tub/shower, toilet, grey vanity | 1600 × 1200 (4:3) | Client photo from Drive `MELS/Plumbing remodels` (cropped from 4000×6000 portrait original) |
-| `images/service-repair.jpg` | Home service card + Services "Plumbing repairs" | Hands-on repair: wrench on a fitting, leak under a sink | Generated plate — pipe union with wrench and drips | 1200 × 900 (4:3) | Generated locally |
+| `images/service-repair.jpg` | Home service card + Services "Plumbing repairs" | Hands-on repair: wrench on a fitting, leak under a sink — a real MELS repair photo would beat the current stock | Stock photo — steel pipework, valves and regulator on a brick wall (Unsplash ID 4CNNH2KEjhc, photographer "compagnons") | 1600 × 1200 (4:3) | Unsplash, uploaded by client |
 | `images/service-maintenance.jpg` | Home service card + Services "Plumbing maintenance" | Water heater service, drain cleaning, or an inspection in progress | Generated plate — water heater with T&P valve and drain | 1200 × 900 (4:3) | Generated locally |
 | `images/gallery-1.jpg` | Home teaser + Gallery (large tile, top-left) | Finished bathroom remodel — the best "after" shot available | Generated plate — finished bathroom with tile field | 1200 × 900 (4:3) | Generated locally |
 | `images/gallery-2.jpg` | Home teaser + Gallery | Water heater installed, strapped and piped to code | Generated plate — water heater install with expansion tank | 1200 × 900 (4:3) | Generated locally |
