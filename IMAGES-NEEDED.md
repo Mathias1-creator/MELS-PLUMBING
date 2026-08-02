@@ -7,14 +7,18 @@ to change.
 
 ---
 
-## Status: 7 of 10 are placeholders
+## Status: 6 of 9 slots are placeholders
 
-**Update (Aug 2, 2026):** two slots now hold real client photos from the Drive
-`MELS` folder — `service-remodel.jpg` (finished bathroom remodel) and
+**Update (Aug 2, 2026):** the site now has **nine** image slots — the hero no
+longer uses a photo at all. Both heroes (home and interior pages) are solid
+green gradients by client request, and the pipe-line motif has been removed
+from them.
+
+Of the nine remaining slots, two hold real client photos from the Drive `MELS`
+folder — `service-remodel.jpg` (finished bathroom remodel) and
 `service-maintenance.jpg` (water heater service). `service-repair.jpg` holds a
-stock photo the client chose (Unsplash industrial pipework). The remaining
-seven — hero and gallery 1–6 — still hold placeholders and are **not yet in the
-Drive folder**; only the two client photos have been uploaded there so far.
+stock photo the client chose (Unsplash industrial pipework). Gallery 1–6 still
+hold placeholders and are **not yet in the Drive folder**.
 
 The site was built inside a sandbox whose network policy blocks every stock
 photo host (Unsplash, Pexels, Pixabay, Wikimedia — all refused at the proxy).
@@ -42,7 +46,7 @@ load behaviour on the preview are exactly what you'll get with real photos.
 
 | File | Where it appears | What it should show | Current contents | Dimensions | Source |
 |---|---|---|---|---|---|
-| `images/hero.jpg` | Home — full-width hero behind the headline | Plumber at work, copper pipework, or a clean modern bathroom. Needs a calm left side: the headline sits over it and the green scrim darkens that half. | Generated plate — supply-line rough-in with gate valve and pressure gauge | 2000 × 1250 (16:10) | Generated locally, `tools/generate-placeholder-images.py` |
+| ~~`images/hero.jpg`~~ | — | **No longer used.** The home hero is now a solid green gradient with no photo, by client request. The file was deleted; restore it from git history if a photo hero is ever wanted again. | n/a | n/a | n/a |
 | `images/service-remodel.jpg` | Home service card + Services "Plumbing remodels" | ✔ Done — real client photo in place | Client photo — finished bathroom remodel: white subway tile, tub/shower, toilet, grey vanity | 1600 × 1200 (4:3) | Client photo from Drive `MELS/Plumbing remodels` (cropped from 4000×6000 portrait original) |
 | `images/service-repair.jpg` | Home service card + Services "Plumbing repairs" | Hands-on repair: wrench on a fitting, leak under a sink — a real MELS repair photo would beat the current stock | Stock photo — steel pipework, valves and regulator on a brick wall (Unsplash ID 4CNNH2KEjhc, photographer "compagnons") | 1600 × 1200 (4:3) | Unsplash, uploaded by client |
 | `images/service-maintenance.jpg` | Home service card + Services "Plumbing maintenance" | ✔ Done — real client photo in place | Client photo — pliers on a water heater supply connection, insulated hot line and brass valve, tank below | 1600 × 1200 (4:3) | Client photo from Drive `MELS/plumbing maintence` (top-aligned crop of 5894×5304 original) |

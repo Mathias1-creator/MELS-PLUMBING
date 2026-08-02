@@ -280,20 +280,6 @@ button { font: inherit; color: inherit; }
   background: var(--silver);
 }
 
-/* Vertical pipe drop used in heroes */
-.pipe-drop {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-}
-.pipe-drop span { width: 2px; height: clamp(40px, 7vw, 76px); background: var(--silver); }
-.pipe-drop i {
-  width: 11px; height: 11px;
-  border: 2px solid var(--silver);
-  border-radius: 50%;
-}
-
 /* --------------------------------------------------------------------------
    5. Buttons
    -------------------------------------------------------------------------- */
@@ -506,28 +492,15 @@ button { font: inherit; color: inherit; }
 /* --------------------------------------------------------------------------
    7. Hero (home)
    -------------------------------------------------------------------------- */
+/* Solid green — no photo. Depth comes from a soft green-soft glow behind the
+   headline over a diagonal green to green-deep fall-off. */
 .hero {
   position: relative;
-  background: var(--green-deep);
+  background:
+    radial-gradient(105% 90% at 12% 18%, rgba(46, 97, 71, 0.75) 0%, rgba(46, 97, 71, 0) 58%),
+    linear-gradient(158deg, var(--green) 0%, var(--green-deep) 62%, var(--green-deep) 100%);
   color: var(--white);
   overflow: hidden;
-}
-.hero__media {
-  position: absolute;
-  inset: 0;
-  background: var(--silver);
-}
-.hero__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.hero__scrim {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(105deg, rgba(18, 41, 28, 0.94) 0%, rgba(18, 41, 28, 0.82) 42%, rgba(18, 41, 28, 0.45) 78%, rgba(18, 41, 28, 0.34) 100%),
-    linear-gradient(to top, rgba(18, 41, 28, 0.7) 0%, rgba(18, 41, 28, 0) 45%);
 }
 .hero__inner {
   position: relative;
@@ -542,19 +515,13 @@ button { font: inherit; color: inherit; }
   margin-bottom: 2rem;
 }
 .hero .eyebrow { color: var(--silver); }
-.hero__pipe {
-  position: absolute;
-  left: var(--gutter);
-  bottom: 0;
-  z-index: 1;
-}
-.hero__pipe span { background: rgba(185, 194, 198, 0.65); }
-.hero__pipe i { border-color: rgba(185, 194, 198, 0.65); }
 
-/* Slim page hero (interior pages) */
+/* Slim page hero (interior pages) — same solid-green treatment, shallower */
 .page-hero {
   position: relative;
-  background: var(--green-deep);
+  background:
+    radial-gradient(100% 130% at 10% 12%, rgba(46, 97, 71, 0.6) 0%, rgba(46, 97, 71, 0) 60%),
+    linear-gradient(158deg, var(--green) 0%, var(--green-deep) 68%);
   color: var(--white);
   overflow: hidden;
 }
@@ -571,41 +538,6 @@ button { font: inherit; color: inherit; }
   margin: 0;
 }
 .page-hero .eyebrow { color: var(--silver); }
-/* Pipe routing: enters top-right, elbows down and left across the hero */
-.page-hero__pipe {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: min(46%, 420px);
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.55;
-}
-.page-hero__pipe i { position: absolute; display: block; }
-.page-hero__pipe .a {
-  top: 0;
-  right: 22%;
-  width: 2px;
-  height: 42%;
-  background: var(--silver);
-}
-.page-hero__pipe .b {
-  top: 42%;
-  right: 22%;
-  width: 60%;
-  height: 40%;
-  border-left: 2px solid var(--silver);
-  border-bottom: 2px solid var(--silver);
-  border-bottom-left-radius: 20px;
-}
-.page-hero__pipe .c {
-  top: calc(82% - 6px);
-  right: calc(82% - 6px);
-  width: 12px;
-  height: 12px;
-  border: 2px solid var(--silver);
-  border-radius: 50%;
-}
 
 /* --------------------------------------------------------------------------
    8. Trust strip
@@ -1363,8 +1295,6 @@ button { font: inherit; color: inherit; }
 @media (max-width: 768px) {
   :root { --sticky-bar-h: 68px; }
   .sticky-bar { display: flex; }
-  /* Not enough room to route beside the copy at this width */
-  .page-hero__pipe { display: none; }
   .hero__inner { padding-block: clamp(3.5rem, 14vw, 5rem); }
   .footer-bottom { padding-bottom: 2rem; }
 }

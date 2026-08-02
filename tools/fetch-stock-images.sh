@@ -23,11 +23,10 @@ BACKUP="images/_placeholders-backup"
 mkdir -p "$BACKUP"
 
 # slot|unsplash search term|width
-# NOTE: service-remodel.jpg, service-repair.jpg and service-maintenance.jpg are
-# deliberately absent — they already hold images the client chose (see
-# IMAGES-NEEDED.md). Do not add them back or those images get overwritten.
+# NOTE: only the six gallery slots are listed. The three service images already
+# hold images the client chose, and the hero no longer uses a photo at all (it
+# is a solid green gradient). See IMAGES-NEEDED.md. Do not add those back.
 SLOTS=(
-  "hero.jpg|plumber-pipes|2000"
   "gallery-1.jpg|modern-bathroom|1600"
   "gallery-2.jpg|water-heater|1600"
   "gallery-3.jpg|copper-pipes|1600"
