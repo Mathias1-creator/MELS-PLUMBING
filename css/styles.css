@@ -412,24 +412,6 @@ button { font: inherit; color: inherit; }
   color: var(--green);
   text-transform: uppercase;
 }
-.wordmark__tag {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.3125rem;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.6875rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.wordmark__tag::before {
-  content: "";
-  width: 18px;
-  height: 2px;
-  background: var(--silver);
-}
 .wordmark:hover .wordmark__name { color: var(--green-soft); }
 
 .main-nav ul {
@@ -1391,7 +1373,6 @@ button { font: inherit; color: inherit; }
   /* Wordmark + hamburger + call button have to share 375px */
   .header-inner { gap: 0.5rem; }
   .wordmark__name { font-size: 1.3125rem; }
-  .wordmark__tag { font-size: 0.625rem; letter-spacing: 0.18em; }
   .nav-toggle { width: 42px; height: 42px; }
   .header-phone { font-size: 0.9375rem; padding: 0.5rem 0.8125rem; }
   .header-phone__label { display: none; }
