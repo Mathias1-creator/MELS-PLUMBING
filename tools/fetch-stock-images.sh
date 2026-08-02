@@ -23,9 +23,11 @@ BACKUP="images/_placeholders-backup"
 mkdir -p "$BACKUP"
 
 # slot|unsplash search term|width
+# NOTE: service-remodel.jpg is deliberately absent — it already holds a real
+# client photo (see IMAGES-NEEDED.md). Do not add it back or the photo gets
+# overwritten with stock.
 SLOTS=(
   "hero.jpg|plumber-pipes|2000"
-  "service-remodel.jpg|bathroom-remodel|1600"
   "service-repair.jpg|plumber|1600"
   "service-maintenance.jpg|water-heater|1600"
   "gallery-1.jpg|modern-bathroom|1600"
