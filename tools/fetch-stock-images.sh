@@ -31,7 +31,7 @@ SLOTS=(
   "gallery-2.jpg|water-heater|1600"
   "gallery-3.jpg|copper-pipes|1600"
   "gallery-4.jpg|kitchen-faucet|1600"
-  "gallery-5.jpg|drain-plumbing|1600"
+  "gallery-5.jpg|shower-fixtures|1600"
   "gallery-6.jpg|kitchen-sink|1600"
 )
 

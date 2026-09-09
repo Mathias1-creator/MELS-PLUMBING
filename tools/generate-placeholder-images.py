@@ -240,23 +240,28 @@ def scene_faucet():
     ])
 
 
-def scene_drain():
-    """Drain cleaning: floor drain grate and a coiled cable."""
-    grate = "".join(
-        f'<path d="M{380 + i * 44} 300 V520" stroke="{SILVER}" stroke-opacity="0.55" stroke-width="9"/>'
-        for i in range(8)
+def scene_shower_valve():
+    """Bathroom remodel: shower riser, valve body and tub spout on a tiled wall."""
+    tiles = "".join(
+        f'<path d="M{x} 60 V840" stroke="{SILVER}" stroke-opacity="0.09" stroke-width="3"/>'
+        for x in range(120, 1140, 120)
+    ) + "".join(
+        f'<path d="M60 {y} H1140" stroke="{SILVER}" stroke-opacity="0.09" stroke-width="3"/>'
+        for y in range(140, 860, 120)
     )
-    return "".join([
-        f'<circle cx="530" cy="410" r="190" fill="none" stroke="{SILVER}" stroke-opacity="0.8" stroke-width="12"/>',
-        f'<circle cx="530" cy="410" r="150" fill="none" stroke="{SILVER}" stroke-opacity="0.4" stroke-width="6"/>',
-        f'<clipPath id="grateClip"><circle cx="530" cy="410" r="150"/></clipPath>',
-        f'<g clip-path="url(#grateClip)">{grate}</g>',
-        pipe("M700 480 Q900 560 900 680 Q900 800 760 800 Q640 800 640 700", 20),
-        collar(900, 620, 16),
-        f'<circle cx="1000" cy="380" r="120" fill="none" stroke="{SILVER}" stroke-opacity="0.5" stroke-width="14"/>',
-        f'<circle cx="1000" cy="380" r="76" fill="none" stroke="{SILVER}" stroke-opacity="0.35" stroke-width="12"/>',
-        f'<circle cx="1000" cy="380" r="34" fill="none" stroke="{SILVER}" stroke-opacity="0.25" stroke-width="10"/>',
-        outline("M120 880 H1080", 3, 0.18),
+    return tiles + "".join([
+        pipe("M600 600 V300 Q600 250 650 250 H780", 22),      # riser up to the shower arm
+        collar(600, 440, 18),
+        outline("M770 218 H880 V282 H770 Z", 8, 0.85),        # shower head
+        outline("M790 282 V322 M825 282 V332 M860 282 V322", 5, 0.4),
+        outline("M510 590 H690 V730 H510 Z", 8, 0.8),         # valve trim plate
+        f'<circle cx="600" cy="660" r="44" fill="none" stroke="{SILVER}" '
+        f'stroke-opacity="0.85" stroke-width="8"/>',
+        outline("M600 660 L634 632", 7, 0.9),                 # handle
+        pipe("M600 730 V800 Q600 830 640 830 H690", 20),      # drop to the tub spout
+        collar(600, 780, 15),
+        outline("M690 810 H780 L768 852 H690 Z", 7, 0.8),     # spout
+        outline("M260 880 H1060", 4, 0.22),                   # tub rim
     ])
 
 
@@ -281,16 +286,19 @@ def scene_kitchen():
 # Image manifest
 # ---------------------------------------------------------------------------
 
+# ONLY the slots that still hold placeholders.
+#
+# Do NOT add hero.jpg or the three service-*.jpg entries back. The hero is a
+# solid green gradient with no photo at all, and the service images hold real
+# client photos — regenerating them would overwrite the client's work with
+# placeholder art. The scene_hero/remodel/repair/maintenance functions are kept
+# below only so the earlier plates can be rebuilt by hand if ever needed.
 IMAGES = [
-    ("hero.jpg", 2000, 1250, "Rough-in / supply lines", scene_hero),
-    ("service-remodel.jpg", 1200, 900, "Remodel — vanity set", scene_remodel),
-    ("service-repair.jpg", 1200, 900, "Repair — leak at union", scene_repair),
-    ("service-maintenance.jpg", 1200, 900, "Maintenance — water heater", scene_maintenance),
     ("gallery-1.jpg", 1200, 900, "Bathroom remodel", scene_bath_finished),
     ("gallery-2.jpg", 1200, 900, "Water heater install", scene_water_heater_2),
     ("gallery-3.jpg", 1200, 900, "Copper pipe run", scene_copper_run),
     ("gallery-4.jpg", 1200, 900, "Kitchen faucet", scene_faucet),
-    ("gallery-5.jpg", 1200, 900, "Drain / rooter work", scene_drain),
+    ("gallery-5.jpg", 1200, 900, "Shower valve set", scene_shower_valve),
     ("gallery-6.jpg", 1200, 900, "Finished kitchen", scene_kitchen),
 ]
 
@@ -413,7 +421,7 @@ def main():
         for line in failures:
             print("  - " + line)
         sys.exit(1)
-    print("\nAll 10 images generated.")
+    print(f"\nAll {len(IMAGES)} placeholder images generated.")
 
 
 if __name__ == "__main__":

@@ -54,7 +54,7 @@ load behaviour on the preview are exactly what you'll get with real photos.
 | `images/gallery-2.jpg` | Home teaser + Gallery | Water heater installed, strapped and piped to code | Generated plate — water heater install with expansion tank | 1200 × 900 (4:3) | Generated locally |
 | `images/gallery-3.jpg` | Home teaser + Gallery | Copper or PEX runs through studs — clean rough-in work | Generated plate — copper run through framing | 1200 × 900 (4:3) | Generated locally |
 | `images/gallery-4.jpg` | Gallery | Modern kitchen or bath faucet, newly installed | Generated plate — gooseneck kitchen faucet | 1200 × 900 (4:3) | Generated locally |
-| `images/gallery-5.jpg` | Gallery (large tile) | Drain or rooter work — cleared line, cable, floor drain | Generated plate — floor drain with rooter cable | 1200 × 900 (4:3) | Generated locally |
+| `images/gallery-5.jpg` | Gallery (large tile) | Shower valve, tub spout or fixture set during a remodel. **Not drain or rooter work** — the client does not offer drain cleaning or main line service. | Generated plate — shower riser, valve trim and tub spout | 1200 × 900 (4:3) | Generated locally |
 | `images/gallery-6.jpg` | Gallery | Finished kitchen or bath — wide "after" shot | Generated plate — kitchen sink with supply lines | 1200 × 900 (4:3) | Generated locally |
 
 ---
