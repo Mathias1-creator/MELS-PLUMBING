@@ -286,21 +286,21 @@ def scene_kitchen():
 # Image manifest
 # ---------------------------------------------------------------------------
 
-# ONLY the slots that still hold placeholders.
+# EMPTY ON PURPOSE — there are no placeholder slots left.
 #
-# Do NOT add hero.jpg or the three service-*.jpg entries back. The hero is a
-# solid green gradient with no photo at all, and the service images hold real
-# client photos — regenerating them would overwrite the client's work with
-# placeholder art. The scene_hero/remodel/repair/maintenance functions are kept
-# below only so the earlier plates can be rebuilt by hand if ever needed.
-IMAGES = [
-    ("gallery-1.jpg", 1200, 900, "Bathroom remodel", scene_bath_finished),
-    ("gallery-2.jpg", 1200, 900, "Water heater install", scene_water_heater_2),
-    ("gallery-3.jpg", 1200, 900, "Copper pipe run", scene_copper_run),
-    ("gallery-4.jpg", 1200, 900, "Kitchen faucet", scene_faucet),
-    ("gallery-5.jpg", 1200, 900, "Shower valve set", scene_shower_valve),
-    ("gallery-6.jpg", 1200, 900, "Finished kitchen", scene_kitchen),
-]
+# Every image on the site is now a real photo: the five gallery tiles and the
+# remodel and maintenance images are the client's own job photos, the repairs
+# image is a stock photo the client picked, and the hero is a solid green
+# gradient with no photo at all.
+#
+# Do NOT repopulate this list with the gallery, hero or service slots. Running
+# the script with those entries would overwrite the client's photographs with
+# placeholder line art — that has already happened once and had to be undone
+# from git. Add an entry only for a genuinely new slot that has no photo yet.
+#
+# The scene_* functions below are kept so a plate can be rebuilt by hand if a
+# future slot ever needs one.
+IMAGES = []
 
 
 def build_html(width, height, label, scene_svg, tone="dark"):

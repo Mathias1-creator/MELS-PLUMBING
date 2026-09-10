@@ -715,7 +715,7 @@ button { font: inherit; color: inherit; }
   background: var(--silver);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
 }
 .teaser-grid img {
   width: 100%;
@@ -744,11 +744,13 @@ button { font: inherit; color: inherit; }
   cursor: zoom-in;
   position: relative;
 }
+/* Portrait tiles — the client's job photos are all shot on a phone in portrait,
+   so cropping them to landscape threw away the top and bottom of every one. */
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   transition: transform 0.5s var(--ease), opacity 0.3s var(--ease);
 }
 .gallery-item button:hover img { transform: scale(1.045); opacity: 0.92; }
@@ -1223,19 +1225,14 @@ button { font: inherit; color: inherit; }
 @media (min-width: 620px) {
   .contact-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-card--primary { grid-column: 1 / -1; }
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 150px;
-    grid-auto-flow: dense;
-  }
-  .gallery-item img { aspect-ratio: auto; }
-  /* Spans chosen so both columns finish on the same row (3+2+3 each) */
-  .gallery-item:nth-child(1) { grid-row: span 3; }
-  .gallery-item:nth-child(2) { grid-row: span 3; }
-  .gallery-item:nth-child(3) { grid-row: span 2; }
-  .gallery-item:nth-child(4) { grid-row: span 2; }
-  .gallery-item:nth-child(5) { grid-row: span 3; }
-  .gallery-item:nth-child(6) { grid-row: span 3; }
+  /* Five tiles on a 6-column track: two half-width on top, three thirds below,
+     so both rows fill exactly with no trailing gap. */
+  .gallery-grid { grid-template-columns: repeat(6, 1fr); }
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(2) { grid-column: span 3; }
+  .gallery-item:nth-child(3),
+  .gallery-item:nth-child(4),
+  .gallery-item:nth-child(5) { grid-column: span 2; }
 }
 
 @media (min-width: 860px) {
@@ -1245,20 +1242,6 @@ button { font: inherit; color: inherit; }
   .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1.1fr; }
   .contact-grid { grid-template-columns: repeat(3, 1fr); }
   .contact-card--primary { grid-column: 1 / -1; }
-}
-
-@media (min-width: 1024px) {
-  .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 160px;
-  }
-  /* Three columns, every column totalling 5 rows so the grid ends flush */
-  .gallery-item:nth-child(1) { grid-row: span 3; }
-  .gallery-item:nth-child(2) { grid-row: span 2; }
-  .gallery-item:nth-child(3) { grid-row: span 3; }
-  .gallery-item:nth-child(4) { grid-row: span 3; }
-  .gallery-item:nth-child(5) { grid-row: span 2; }
-  .gallery-item:nth-child(6) { grid-row: span 2; }
 }
 
 /* Mobile navigation + sticky bar */

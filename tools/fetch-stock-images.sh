@@ -23,17 +23,16 @@ BACKUP="images/_placeholders-backup"
 mkdir -p "$BACKUP"
 
 # slot|unsplash search term|width
-# NOTE: only the six gallery slots are listed. The three service images already
-# hold images the client chose, and the hero no longer uses a photo at all (it
-# is a solid green gradient). See IMAGES-NEEDED.md. Do not add those back.
-SLOTS=(
-  "gallery-1.jpg|modern-bathroom|1600"
-  "gallery-2.jpg|water-heater|1600"
-  "gallery-3.jpg|copper-pipes|1600"
-  "gallery-4.jpg|kitchen-faucet|1600"
-  "gallery-5.jpg|shower-fixtures|1600"
-  "gallery-6.jpg|kitchen-sink|1600"
-)
+# EMPTY ON PURPOSE — no slot needs stock photography any more.
+#
+# The five gallery tiles and the remodel and maintenance images are the
+# client's own job photos. Adding any of them back here would overwrite real
+# photographs of Melvin's work with stock images of somebody else's.
+#
+# The only stock image left on the site is images/service-repair.jpg, and that
+# should be replaced with one of Melvin's own repair photos when he has one —
+# by hand, not by this script.
+SLOTS=()
 
 USED=""
 FAILED=""
